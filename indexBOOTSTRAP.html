@@ -2003,6 +2003,11 @@ footer .social-links a:hover {
   
   // 手机端只显示项目经验板块
 document.addEventListener("DOMContentLoaded", function() {
+   AOS.init({
+    duration: 800,
+    once: true,
+    offset: 100
+  });
   const allSections = document.querySelectorAll("section");
   const footer = document.querySelector("footer");
 
@@ -2039,4 +2044,5 @@ document.addEventListener("DOMContentLoaded", function() {
 </body>
 
 </html>
+
 
