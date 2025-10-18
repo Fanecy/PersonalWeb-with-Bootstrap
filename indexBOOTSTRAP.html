@@ -1,0 +1,2004 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>原田桦的作品集</title>
+
+  <!-- Bootstrap 样式 -->
+  <link href="lib/bootstrap-5.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" >
+  <!-- Font Awesome 图标 -->
+  <link href="lib/fontawesome-free-6.7.2-web/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- AOS 动画库 -->
+  <link href="lib/aos-master/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+/* ===== CSS 变量定义 ===== */
+:root {
+  --primary-color: #6366f1;
+  --primary-dark: #4f46e5;
+  --primary-light: #a5b4fc;
+  --secondary-color: #f59e0b;
+  --accent-color: #ec4899;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --text-muted: #9ca3af;
+  --bg-light: #f8fafc;
+  --bg-white: #ffffff;
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== 全局样式 ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.7;
+  scroll-behavior: smooth;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 3rem;
+  position: relative;
+  text-align: center;
+}
+
+.section-title::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  display: block;
+  margin: 16px auto 0 auto;
+  border-radius: 2px;
+}
+
+/* ===== 导航栏 ===== */
+.navbar {
+  backdrop-filter: blur(20px);
+  background-color: rgba(31, 41, 55, 0.95) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-link {
+  font-weight: 500;
+  position: relative;
+  transition: var(--transition);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 50%;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  transition: var(--transition);
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ===== Hero 区域 ===== */
+.hero {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  padding: 100px 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero .display-4 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero .lead {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.hero .btn {
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero .btn:hover {
+  background: white;
+  color: var(--primary-color);
+  border-color: white;
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-2px);
+}
+
+/* ===== 关于我区域 ===== */
+#about {
+  padding: 100px 0;
+  background: var(--bg-white);
+}
+
+.about-img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-light);
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+  position: relative;
+}
+
+.about-img::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  z-index: -1;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.about-img:hover::before {
+  opacity: 1;
+}
+
+.about-img:hover {
+  transform: scale(1.05) rotate(5deg);
+}
+
+.list-group-item {
+  border: none;
+  padding: 12px 0;
+  background: transparent;
+  font-size: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.list-group-item:hover {
+  padding-left: 10px;
+  color: var(--primary-color);
+}
+
+.progress {
+  height: 10px;
+  border-radius: 5px;
+  background: rgba(99, 102, 241, 0.1);
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color)) !important;
+  border-radius: 5px;
+  transition: width 1.5s ease-in-out;
+}
+
+/* ===== 技能标签 ===== */
+.skill-badge {
+  display: inline-block;
+  margin: 6px 8px 6px 0;
+  padding: 10px 20px;
+  background: var(--bg-white);
+  border: 2px solid var(--primary-light);
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  transition: var(--transition);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.skill-badge:hover {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ===== 项目经验区域 ===== */
+.project-experience {
+  padding: 80px 0;
+  background: var(--bg-light);
+}
+
+.project-experience .list-group-item {
+  background: var(--bg-white);
+  border: none;
+  border-radius: var(--border-radius);
+  margin-bottom: 16px;
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.project-experience .list-group-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  padding-left: 24px;
+}
+
+/* 轮播图箭头颜色 */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #6366f1; 
+  border-radius: 50%;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== 作品展示 ===== */
+#projects {
+  padding: 100px 0;
+  background: var(--bg-white);
+}
+
+.project-card {
+  border: none;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: var(--transition);
+  background: var(--bg-white);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  opacity: 0;
+  transition: var(--transition);
+  z-index: 1;
+}
+
+.project-card:hover::before {
+  opacity: 0.1;
+}
+
+.project-card img {
+  height: 240px;
+  object-fit: cover;
+  width: 100%;
+  transition: var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.project-card .card-body {
+  padding: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: var(--transition);
+  z-index: 3;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-overlay .btn {
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: var(--transition);
+}
+
+.project-overlay .btn:hover {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  border-color: transparent;
+  transform: scale(1.05);
+}
+
+/* ===== 联系区域 ===== */
+.contact-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, var(--bg-light), rgba(99, 102, 241, 0.05));
+}
+
+.contact-section .form-control {
+  border: 2px solid rgba(99, 102, 241, 0.1);
+  border-radius: var(--border-radius);
+  padding: 16px 20px;
+  font-size: 1rem;
+  transition: var(--transition);
+  background: var(--bg-white);
+}
+
+.contact-section .form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(99, 102, 241, 0.25);
+  background: var(--bg-white);
+}
+
+.contact-section .btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  border: none;
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: var(--transition);
+}
+
+.contact-section .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.qr-code-container {
+  text-align: center;
+  margin-top: 32px;
+  padding: 24px;
+  background: var(--bg-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.qr-code-container img {
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+}
+
+/* ===== 页脚 ===== */
+footer {
+  background: linear-gradient(135deg, var(--text-dark), #111827);
+  color: var(--text-muted);
+  padding: 40px 0;
+  text-align: center;
+}
+
+footer .social-links {
+  margin-top: 16px;
+}
+
+footer .social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 0 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: var(--text-muted);
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+footer .social-links a:hover {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ===== 动画效果 ===== */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== 响应式设计 ===== */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .hero .display-4 {
+    font-size: 2.5rem;
+  }
+  
+  .hero .lead {
+    font-size: 1.2rem;
+  }
+  
+  .carousel-caption h1 {
+    font-size: 2rem;
+  }
+  
+  .about-img {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .project-card img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 80px 20px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  
+  #about,
+  #projects,
+  .contact-section {
+    padding: 60px 0;
+  }
+}
+
+/* ===== 滚动条美化 ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* ===== 模态框样式 ===== */
+.modal-content {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-xl);
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 24px 24px 16px 24px;
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+.modal-title {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.btn-close {
+  filter: none;
+  opacity: 0.6;
+}
+
+.btn-close:hover {
+  opacity: 1;
+}
+  </style>
+</head>
+<body>
+
+<!-- 导航栏 -->
+<!-- 图标、工具提示、Offcanvas -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <i class="fas fa-laptop-code me-2"></i>数媒作品集
+    </a>
+    <button class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarNav" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#about" data-bs-toggle="tooltip" title="了解我的背景">
+            <i class="fas fa-user me-1"></i>关于
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#experience" data-bs-toggle="tooltip" title="查看项目经验">
+            <i class="fas fa-briefcase me-1"></i>经验
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects" data-bs-toggle="tooltip" title="浏览精选作品">
+            <i class="fas fa-folder-open me-1"></i>作品
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact" data-bs-toggle="tooltip" title="与我联系">
+            <i class="fas fa-envelope me-1"></i>联系
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Offcanvas 移动端菜单 -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">导航菜单</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav">
+      <li class="nav-item mb-2">
+        <a class="nav-link" href="#about" data-bs-dismiss="offcanvas">
+          <i class="fas fa-user me-2"></i>关于我
+        </a>
+      </li>
+      <li class="nav-item mb-2">
+        <a class="nav-link" href="#experience" data-bs-dismiss="offcanvas">
+          <i class="fas fa-briefcase me-2"></i>项目经验
+        </a>
+      </li>
+      <li class="nav-item mb-2">
+        <a class="nav-link" href="#projects" data-bs-dismiss="offcanvas">
+          <i class="fas fa-folder-open me-2"></i>作品展示
+        </a>
+      </li>
+      <li class="nav-item mb-2">
+        <a class="nav-link" href="#contact" data-bs-dismiss="offcanvas">
+          <i class="fas fa-envelope me-2"></i>联系方式
+        </a>
+      </li>
+    </ul>
+    
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="display-4">你好，我是原田桦</h1>
+      <p class="lead">全栈开发者 | UI设计师 | 数字创作者</p>
+      <a href="#projects" class="btn btn-outline-light btn-lg">查看我的作品</a>
+    </div>
+  </div>
+</section>
+
+<!-- 提示信息区域 -->
+<section class="py-4" style="background: var(--bg-light);">
+  <div class="container">
+    <div class="alert alert-info d-flex align-items-center" role="alert" data-aos="fade-down">
+      <i class="fas fa-info-circle me-3 fs-4"></i>
+      <div>
+        <strong>最新动态：</strong>目前正在寻找实习机会，欢迎HR和技术团队联系！
+        <a href="#contact" class="alert-link">立即联系 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 关于我 -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">关于我</h2>
+    <div class="row g-5 align-items-center">
+      <!-- 左侧个人信息 -->
+      <div class="col-md-4 text-center" data-aos="fade-right">
+        <img src="pics/me.jpg" alt="原田桦" class="about-img mb-4">
+        <h4 class="fw-bold mb-2">原田桦</h4>
+        <p class="text-muted mb-4">全栈开发者 | UI 设计师</p>
+        <ul class="list-unstyled text-start">
+          <li class="mb-2"><i class="fas fa-map-marker-alt me-3 text-primary"></i>浙江 杭州</li>
+          <li class="mb-2"><i class="fas fa-envelope me-3 text-primary"></i>15934349473@163.com</li>
+          <li class="mb-2"><i class="fas fa-envelope me-3 text-primary"></i>a2985171395@gmail.com</li>
+          <li class="mb-2"><i class="fas fa-phone-alt me-3 text-primary"></i>+86 15934349473</li>
+          <li class="mb-2"><i class="fab fa-github me-3 text-primary"></i>github.com/Fanecy</li>
+        </ul>
+      </div>
+      
+      <!-- 右侧详细信息 -->
+      <div class="col-md-8" data-aos="fade-left">
+        <div class="mb-5">
+          <h5 class="fw-bold mb-3 text-primary">自我简介</h5>
+          <p class="lead">我专注于构建优雅、互动性强的前端界面，善于将技术与美感结合。拥有网页开发、UI/UX 设计与数据可视化经验，致力于打造令人惊艳的数字体验。</p>
+        </div>
+
+        <div class="mb-5">
+          <h5 class="fw-bold mb-3 text-primary">教育与经历</h5>
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div>
+                <strong>浙江理工大学 · 数字媒体技术</strong>
+                <small class="d-block text-muted">本科在读，专注于数字媒体技术与交互设计</small>
+              </div>
+              <span class="badge bg-primary rounded-pill">2023 - 2027</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div>
+                <strong>某科技公司 · 前端实习生</strong>
+                <small class="d-block text-muted">参与企业级项目开发，积累实战经验</small>
+              </div>
+              <span class="badge bg-secondary rounded-pill">2025.7 - 2025.9</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mb-5">
+          <h5 class="fw-bold mb-3 text-primary">证书</h5>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center">
+                <i class="fas fa-certificate text-warning me-3 fs-5"></i>
+                <span>大学英语四级（CET-4）</span>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center">
+                <i class="fas fa-certificate text-warning me-3 fs-5"></i>
+                <span>大学英语六级（CET-6）口语证书</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 新增：使用 Tabs 展示技能分类 -->
+        <div class="mb-5">
+          <h5 class="fw-bold mb-3 text-primary">技能分类</h5>
+          <ul class="nav nav-tabs" id="skillTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#frontend" type="button">
+                <i class="fas fa-code me-1"></i>前端开发
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#design" type="button">
+                <i class="fas fa-paint-brush me-1"></i>设计工具
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#backend" type="button">
+                <i class="fas fa-server me-1"></i>后端技术
+              </button>
+            </li>
+          </ul>
+          <div class="tab-content p-4 bg-white rounded-bottom" id="skillTabsContent">
+            <div class="tab-pane fade show active" id="frontend">
+              <div class="row g-3">
+                <div class="col-6">
+                  <div class="d-flex justify-content-between mb-1">
+                    <span class="fw-medium">HTML5</span>
+                    <span class="text-muted">90%</span>
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar" style="width: 90%;"></div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="d-flex justify-content-between mb-1">
+                    <span class="fw-medium">CSS3</span>
+                    <span class="text-muted">85%</span>
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar" style="width: 85%;"></div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="d-flex justify-content-between mb-1">
+                    <span class="fw-medium">JavaScript</span>
+                    <span class="text-muted">80%</span>
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar" style="width: 80%;"></div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="d-flex justify-content-between mb-1">
+                    <span class="fw-medium">React</span>
+                    <span class="text-muted">75%</span>
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar" style="width: 75%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="design">
+              <div class="row g-3">
+                <div class="col-6">
+                  <div class="d-flex justify-content-between mb-1">
+                    <span class="fw-medium">Figma</span>
+                    <span class="text-muted">85%</span>
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar" style="width: 85%;"></div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="d-flex justify-content-between mb-1">
+                    <span class="fw-medium">Photoshop</span>
+                    <span class="text-muted">75%</span>
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar" style="width: 75%;"></div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="d-flex justify-content-between mb-1">
+                    <span class="fw-medium">Sketch</span>
+                    <span class="text-muted">70%</span>
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar" style="width: 70%;"></div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="d-flex justify-content-between mb-1">
+                    <span class="fw-medium">Illustrator</span>
+                    <span class="text-muted">65%</span>
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar" style="width: 65%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="backend">
+              <div class="row g-3">
+                <div class="col-6">
+                  <div class="d-flex justify-content-between mb-1">
+                    <span class="fw-medium">Node.js</span>
+                    <span class="text-muted">70%</span>
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar" style="width: 70%;"></div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="d-flex justify-content-between mb-1">
+                    <span class="fw-medium">C++ QT</span>
+                    <span class="text-muted">95%</span>
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar" style="width: 95%;"></div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="d-flex justify-content-between mb-1">
+                    <span class="fw-medium">Python</span>
+                    <span class="text-muted">60%</span>
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar" style="width: 60%;"></div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="d-flex justify-content-between mb-1">
+                    <span class="fw-medium">MySQL</span>
+                    <span class="text-muted">65%</span>
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar" style="width: 65%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="mb-5">
+          <h5 class="fw-bold mb-3 text-primary">技术栈</h5>
+          <div data-aos="fade-up" data-aos-delay="100">
+            <span class="skill-badge">HTML5</span>
+            <span class="skill-badge">CSS3</span>
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">React</span>
+            <span class="skill-badge">Vue.js</span>
+            <span class="skill-badge">Node.js</span>
+            <span class="skill-badge">Figma</span>
+            <span class="skill-badge">C++ QT</span>
+            <span class="skill-badge">Bootstrap</span>
+            <span class="skill-badge">ECharts</span>
+          </div>
+        </div>
+
+        <div>
+          <h5 class="fw-bold mb-3 text-primary">兴趣爱好</h5>
+          <div data-aos="fade-up" data-aos-delay="200">
+            <span class="skill-badge">📸 摄影</span>
+            <span class="skill-badge">🎮 游戏设计</span>
+            <span class="skill-badge">🎵 音乐</span>
+            <span class="skill-badge">🎨 数字艺术</span>
+            <span class="skill-badge">🏃‍♂️ 运动健身</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 项目经验 -->
+<section id="experience" class="project-experience">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">项目经验</h2>
+  
+
+    <!-- 轮播图 -->
+    <div id="projectCarousel" class="carousel slide project-experience-carousel" data-bs-ride="carousel" data-aos="fade-up" data-aos-delay="200">
+      
+      <!-- 指示器 -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2"></button>
+        <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="3"></button>
+        <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="4"></button>
+      </div>
+      
+      <div class="carousel-inner">
+        <!-- 项目 1：炫彩产品官网 -->
+        <div class="carousel-item active">
+          <div class="row g-4 align-items-center">
+            <div class="col-md-6">
+              <div class="experience-card">
+                <div class="card-icon">
+                  <i class="fas fa-palette"></i>
+                </div>
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <h5 class="fw-bold text-primary mb-0">炫彩产品官网</h5>
+                  <span class="badge bg-primary">Web 开发</span>
+                </div>
+                <p class="text-muted mb-3">
+                  <i class="fas fa-calendar-alt me-2"></i>2024.01 - 2024.03
+                </p>
+                <p class="mb-3">现代化的产品官网，采用炫彩渐变设计和响应式布局。网站具有出色的视觉效果和用户体验，完美适配各种设备。</p>
+                <h6 class="fw-bold mb-2">技术特点：</h6>
+                <ul class="list-unstyled mb-3">
+                  <li><i class="fas fa-check-circle text-success me-2"></i>HTML5 + CSS3 + Bootstrap 5 构建</li>
+                  <li><i class="fas fa-check-circle text-success me-2"></i>响应式设计，支持移动端和桌面端</li>
+                  <li><i class="fas fa-check-circle text-success me-2"></i>渐变色彩搭配，视觉冲击力强</li>
+                  <li><i class="fas fa-check-circle text-success me-2"></i>CSS3 动画效果，交互体验流畅</li>
+                </ul>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-light text-dark">HTML5</span>
+                  <span class="badge bg-light text-dark">CSS3</span>
+                  <span class="badge bg-light text-dark">Bootstrap</span>
+                  <span class="badge bg-light text-dark">JavaScript</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <img src="pics/web3.jpg" alt="炫彩产品官网" class="img-fluid rounded shadow-lg">
+            </div>
+          </div>
+        </div>
+
+        <!-- 项目 2：移动应用设计 -->
+        <div class="carousel-item">
+          <div class="row g-4 align-items-center">
+            <div class="col-md-6">
+              <div class="experience-card">
+                <div class="card-icon">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <h5 class="fw-bold text-primary mb-0">移动应用设计</h5>
+                  <span class="badge bg-success">UI/UX 设计</span>
+                </div>
+                <p class="text-muted mb-3">
+                  <i class="fas fa-calendar-alt me-2"></i>2023.09 - 2023.12
+                </p>
+                <p class="mb-3">完整的移动应用UI设计方案，包含用户界面设计、交互原型和用户体验优化。设计风格简约现代，符合当前移动端设计趋势。</p>
+                <h6 class="fw-bold mb-2">设计特点：</h6>
+                <ul class="list-unstyled mb-3">
+                  <li><i class="fas fa-check-circle text-success me-2"></i>使用Figma进行原型设计和界面设计</li>
+                  <li><i class="fas fa-check-circle text-success me-2"></i>遵循Material Design和iOS设计规范</li>
+                  <li><i class="fas fa-check-circle text-success me-2"></i>完整的用户流程设计</li>
+                  <li><i class="fas fa-check-circle text-success me-2"></i>多平台适配方案</li>
+                </ul>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-light text-dark">Figma</span>
+                  <span class="badge bg-light text-dark">Sketch</span>
+                  <span class="badge bg-light text-dark">Photoshop</span>
+                  <span class="badge bg-light text-dark">Principle</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <img src="pics/app.png" alt="移动应用设计" class="img-fluid rounded shadow-lg">
+            </div>
+          </div>
+        </div>
+
+        <!-- 项目 3：数据可视化大屏 -->
+        <div class="carousel-item">
+          <div class="row g-4 align-items-center">
+            <div class="col-md-6">
+              <div class="experience-card">
+                <div class="card-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <h5 class="fw-bold text-primary mb-0">数据可视化大屏</h5>
+                  <span class="badge bg-secondary">数据可视化</span>
+                </div>
+                <p class="text-muted mb-3">
+                  <i class="fas fa-calendar-alt me-2"></i>2024.03 - 2024.06
+                </p>
+                <p class="mb-3">企业级数据可视化大屏项目，实现了实时数据展示、多维度数据分析和交互式图表功能。适用于监控中心、会议室等大屏展示场景。</p>
+                <h6 class="fw-bold mb-2">技术特点：</h6>
+                <ul class="list-unstyled mb-3">
+                  <li><i class="fas fa-check-circle text-success me-2"></i>ECharts + Vue.js 构建交互式图表</li>
+                  <li><i class="fas fa-check-circle text-success me-2"></i>WebSocket 实现实时数据更新</li>
+                  <li><i class="fas fa-check-circle text-success me-2"></i>支持多种图表类型（柱状图、饼图、地图等）</li>
+                  <li><i class="fas fa-check-circle text-success me-2"></i>响应式布局，适配不同屏幕尺寸</li>
+                </ul>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-light text-dark">Vue.js</span>
+                  <span class="badge bg-light text-dark">ECharts</span>
+                  <span class="badge bg-light text-dark">WebSocket</span>
+                  <span class="badge bg-light text-dark">Axios</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <img src="pics/data.png" alt="数据可视化大屏" class="img-fluid rounded shadow-lg">
+            </div>
+          </div>
+        </div>
+
+        <!-- 项目 4：VLC QT高仿QQ播放器 -->
+<div class="carousel-item">
+  <div class="row g-4 align-items-center">
+    <div class="col-md-6">
+      <div class="experience-card">
+        <div class="card-icon">
+          <i class="fas fa-play-circle"></i>
+        </div>
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <h5 class="fw-bold text-primary mb-0">VLC QT高仿QQ播放器</h5>
+          <span class="badge bg-info">桌面应用</span>
+        </div>
+        <p class="text-muted mb-3">
+          <i class="fas fa-calendar-alt me-2"></i>2024.06 - 2024.08
+        </p>
+        <p class="mb-3">基于VLC库和Qt框架开发的多媒体播放器，高度还原QQ影音的界面设计和交互体验，支持多种视频格式播放和实用功能。</p>
+        <h6 class="fw-bold mb-2">核心功能：</h6>
+        <ul class="list-unstyled mb-3">
+          <li><i class="fas fa-check-circle text-success me-2"></i>基于VLC库实现多格式视频播放</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>Qt界面设计，高仿QQ影音UI</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>播放列表管理与快捷键控制</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>音量调节、进度控制、截图功能</li>
+        </ul>
+        <div class="d-flex flex-wrap gap-2">
+          <span class="badge bg-light text-dark">C++</span>
+          <span class="badge bg-light text-dark">Qt</span>
+          <span class="badge bg-light text-dark">VLC</span>
+          <span class="badge bg-light text-dark">QML</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <img src="pics/qt.png" alt="VLC QT高仿QQ播放器" class="img-fluid rounded shadow-lg">
+    </div>
+  </div>
+</div>
+
+<!-- 项目 5：Qt+OpenCV视觉处理系统 -->
+<div class="carousel-item">
+  <div class="row g-4 align-items-center">
+    <div class="col-md-6">
+      <div class="experience-card">
+        <div class="card-icon">
+          <i class="fas fa-camera"></i>
+        </div>
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <h5 class="fw-bold text-primary mb-0">Qt+OpenCV视觉处理系统</h5>
+          <span class="badge bg-warning text-dark">计算机视觉</span>
+        </div>
+        <p class="text-muted mb-3">
+          <i class="fas fa-calendar-alt me-2"></i>2024.09 - 2024.10
+        </p>
+        <p class="mb-3">结合Qt图形界面和OpenCV计算机视觉库开发的图像处理应用，实现了实时摄像头捕捉、图像滤镜、人脸识别等功能。</p>
+        <h6 class="fw-bold mb-2">主要特性：</h6>
+        <ul class="list-unstyled mb-3">
+          <li><i class="fas fa-check-circle text-success me-2"></i>实时摄像头视频流捕捉与处理</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>图像滤镜、边缘检测、灰度转换</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>人脸检测与特征识别</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>Qt界面设计，操作简洁直观</li>
+        </ul>
+        <div class="d-flex flex-wrap gap-2">
+          <span class="badge bg-light text-dark">C++</span>
+          <span class="badge bg-light text-dark">Qt</span>
+          <span class="badge bg-light text-dark">OpenCV</span>
+          <span class="badge bg-light text-dark">CMake</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <img src="pics/OpenCV.png" alt="Qt+OpenCV视觉处理系统" class="img-fluid rounded shadow-lg">
+    </div>
+  </div>
+</div>
+
+      <!-- 左右切换按钮 -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">上一个</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">下一个</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<!-- 作品展示 -->
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">精选作品</h2>
+    <div class="row g-4">
+      <!-- 项目1：炫彩产品官网 -->
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card project-card h-100">
+          <img src="pics/web3.jpg" class="card-img-top" alt="炫彩产品官网">
+          <div class="card-body">
+            <h6 class="card-title fw-bold">炫彩产品官网</h6>
+            <p class="card-text text-muted">HTML5 / CSS3 / Bootstrap 5</p>
+            <div class="d-flex flex-wrap gap-1">
+              <span class="badge bg-light text-dark">响应式</span>
+              <span class="badge bg-light text-dark">现代设计</span>
+              <span class="badge bg-light text-dark">动画效果</span>
+            </div>
+          </div>
+          <div class="project-overlay">
+            <a href="#" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#projectModal1">查看详情</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 项目2：移动应用设计 -->
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card project-card h-100">
+          <img src="pics/app.png" class="card-img-top" alt="移动应用设计">
+          <div class="card-body">
+            <h6 class="card-title fw-bold">移动应用设计</h6>
+            <p class="card-text text-muted">UI/UX 设计 / Figma / Sketch</p>
+            <div class="d-flex flex-wrap gap-1">
+              <span class="badge bg-light text-dark">UI设计</span>
+              <span class="badge bg-light text-dark">用户体验</span>
+              <span class="badge bg-light text-dark">原型设计</span>
+            </div>
+          </div>
+          <div class="project-overlay">
+            <a href="#" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#projectModal2">查看详情</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 项目3：数据可视化大屏 -->
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+        <div class="card project-card h-100">
+          <img src="pics/data.png" class="card-img-top" alt="数据可视化大屏">
+          <div class="card-body">
+            <h6 class="card-title fw-bold">数据可视化大屏</h6>
+            <p class="card-text text-muted">ECharts / Vue.js / WebSocket</p>
+            <div class="d-flex flex-wrap gap-1">
+              <span class="badge bg-light text-dark">数据可视化</span>
+              <span class="badge bg-light text-dark">实时更新</span>
+              <span class="badge bg-light text-dark">交互设计</span>
+            </div>
+          </div>
+          <div class="project-overlay">
+            <a href="#" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#projectModal3">查看详情</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 项目4：VLC QT高仿QQ播放器 -->
+<div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+  <div class="card project-card h-100">
+    <img src="pics/qt.png" class="card-img-top" alt="VLC QT高仿QQ播放器">
+    <div class="card-body">
+      <h6 class="card-title fw-bold">VLC QT高仿QQ播放器</h6>
+      <p class="card-text text-muted">C++ / Qt / VLC / 桌面应用</p>
+      <div class="d-flex flex-wrap gap-1">
+        <span class="badge bg-light text-dark">多媒体</span>
+        <span class="badge bg-light text-dark">跨平台</span>
+        <span class="badge bg-light text-dark">高仿UI</span>
+      </div>
+    </div>
+    <div class="project-overlay">
+      <a href="#" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#projectModal4">查看详情</a>
+    </div>
+  </div>
+</div>
+
+<!-- 项目5：Qt+OpenCV视觉处理系统 -->
+<div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
+  <div class="card project-card h-100">
+    <img src="pics/OpenCV.png" class="card-img-top" alt="Qt+OpenCV视觉处理系统">
+    <div class="card-body">
+      <h6 class="card-title fw-bold">Qt+OpenCV视觉处理系统</h6>
+      <p class="card-text text-muted">C++ / Qt / OpenCV / CV</p>
+      <div class="d-flex flex-wrap gap-1">
+        <span class="badge bg-light text-dark">计算机视觉</span>
+        <span class="badge bg-light text-dark">图像处理</span>
+        <span class="badge bg-light text-dark">人脸识别</span>
+      </div>
+    </div>
+    <div class="project-overlay">
+      <a href="#" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#projectModal5">查看详情</a>
+    </div>
+  </div>
+</div>
+
+      <!-- 占位卡片（可选，保持布局美观） -->
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="600">
+        <div class="card project-card h-100" style="opacity: 0.6; cursor: not-allowed;">
+          <div class="card-body d-flex flex-column align-items-center justify-content-center" style="min-height: 300px;">
+            <i class="fas fa-plus-circle text-muted mb-3" style="font-size: 4rem;"></i>
+            <h6 class="text-muted">更多项目</h6>
+            <p class="text-muted small">敬请期待...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 联系方式 -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">联系我</h2>
+
+    <div class="row justify-content-center g-4">
+      <!-- 左侧：联系表单 -->
+      <div class="col-lg-6 col-md-8" data-aos="fade-right">
+        <div class="card border-0 shadow-lg">
+          <div class="card-body p-4">
+            <h5 class="card-title fw-bold mb-4">
+              <i class="fas fa-paper-plane text-primary me-2"></i>发送消息
+            </h5>
+            
+            <form>
+              <!-- 姓名输入框 -->
+              <div class="mb-3">
+                <input type="text" class="form-control" placeholder="您的姓名（必填）" required>
+              </div>
+
+              <!-- 邮箱输入框 -->
+              <div class="mb-3">
+                <input type="email" class="form-control" placeholder="电子邮箱（必填）" required>
+              </div>
+
+              <!-- 主题选择 -->
+              <div class="mb-3">
+                <select class="form-select">
+                  <option selected>请选择咨询类型</option>
+                  <option value="1">💼 实习/工作机会</option>
+                  <option value="2">🤝 项目合作</option>
+                  <option value="3">💡 技术咨询</option>
+                  <option value="4">📚 学习交流</option>
+                  <option value="5">🎯 其他事项</option>
+                </select>
+              </div>
+
+              <!-- 留言内容 -->
+              <div class="mb-3">
+                <textarea class="form-control" rows="5" placeholder="请输入您想说的话...（必填）" required></textarea>
+              </div>
+
+              <!-- 隐私协议复选框 -->
+              <div class="mb-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="agree" required>
+                  <label class="form-check-label" for="agree">
+                    我已阅读并同意 <a href="#" class="link-primary">隐私政策</a>
+                  </label>
+                </div>
+              </div>
+
+              <!-- 按钮组 -->
+              <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary flex-fill">
+                  <i class="fas fa-paper-plane me-2"></i>发送消息
+                </button>
+                <button type="reset" class="btn btn-outline-secondary" data-bs-toggle="tooltip" title="重置表单">
+                  <i class="fas fa-redo"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右侧：微信二维码 + 联系方式 -->
+      <div class="col-lg-4 col-md-8" data-aos="fade-left">
+        <!-- 微信二维码卡片 -->
+        <div class="card border-0 shadow-lg mb-4">
+          <div class="card-body text-center p-4">
+            <div class="qr-code-container">
+              <div class="mb-3">
+                <i class="fab fa-weixin text-success" style="font-size: 3rem;"></i>
+              </div>
+              <img src="pics/MyCode.png" alt="微信二维码" class="img-fluid rounded shadow" style="width: 180px; height: 180px;">
+              <h6 class="mt-3 mb-2 fw-bold">
+                <i class="fas fa-qrcode text-primary me-2"></i>扫一扫加我微信
+              </h6>
+              <p class="small text-muted mb-0">随时欢迎交流合作</p>
+              
+              <!-- 在线状态进度条 -->
+              <div class="mt-3">
+                <div class="d-flex justify-content-between mb-1">
+                  <small class="text-muted">在线时间</small>
+                  <span class="badge bg-success">
+                    <i class="fas fa-circle" style="font-size: 0.5rem;"></i> 在线
+                  </span>
+                </div>
+                <div class="progress" style="height: 6px;">
+                  <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" 
+                       role="progressbar" style="width: 85%;" 
+                       data-bs-toggle="tooltip" title="通常在线时间 9:00-22:00">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+   
+
+            <!-- 提示信息 -->
+            <div class="alert alert-info d-flex align-items-center mt-3 mb-0" role="alert">
+              <i class="fas fa-lightbulb me-2"></i>
+              <small><strong>提示：</strong>目前正在寻找实习机会</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部：工作状态横幅 -->
+    <div class="row justify-content-center mt-4">
+      <div class="col-lg-10">
+        <div class="alert alert-success text-center shadow-sm" role="alert" data-aos="fade-up">
+          <i class="fas fa-check-circle me-2 fs-5"></i>
+          <strong>当前状态：</strong>正在寻找实习/工作机会，欢迎HR和技术团队联系！
+          <button class="btn btn-sm btn-outline-success ms-3" data-bs-toggle="tooltip" title="查看简历">
+            <i class="fas fa-file-pdf me-1"></i>下载简历
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- 模态框区域 -->
+<!-- 模态框1：炫彩产品官网 -->
+<div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModalLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="projectModalLabel1">
+          <i class="fas fa-palette text-primary me-2"></i>炫彩产品官网
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="关闭"></button>
+      </div>
+      <div class="modal-body">
+        <img src="pics/web3.jpg" alt="炫彩产品官网" class="img-fluid rounded mb-4 shadow">
+        
+        <div class="mb-3">
+          <span class="badge bg-primary me-2">Web 开发</span>
+          <span class="badge bg-secondary">2024.01 - 2024.03</span>
+        </div>
+
+        <h6 class="fw-bold text-primary mb-3">
+          <i class="fas fa-info-circle me-2"></i>项目概述
+        </h6>
+        <p>现代化的产品官网，采用炫彩渐变设计和响应式布局。网站具有出色的视觉效果和用户体验，完美适配各种设备。</p>
+        
+        <h6 class="fw-bold text-primary mb-3">
+          <i class="fas fa-cogs me-2"></i>技术特点
+        </h6>
+        <ul class="list-unstyled">
+          <li><i class="fas fa-check-circle text-success me-2"></i>HTML5 + CSS3 + Bootstrap 5 构建</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>响应式设计，支持移动端和桌面端</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>渐变色彩搭配，视觉冲击力强</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>CSS3 动画效果，交互体验流畅</li>
+        </ul>
+
+        <h6 class="fw-bold text-primary mb-3">
+          <i class="fas fa-tags me-2"></i>技术栈
+        </h6>
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <span class="badge bg-light text-dark">HTML5</span>
+          <span class="badge bg-light text-dark">CSS3</span>
+          <span class="badge bg-light text-dark">Bootstrap</span>
+          <span class="badge bg-light text-dark">JavaScript</span>
+        </div>
+        
+        <div class="d-flex gap-2">
+          <button class="btn btn-primary">
+            <i class="fas fa-external-link-alt me-2"></i>在线预览
+          </button>
+          <button class="btn btn-outline-primary">
+            <i class="fab fa-github me-2"></i>查看代码
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 模态框2：移动应用设计 -->
+<div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModalLabel2" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="projectModalLabel2">
+          <i class="fas fa-mobile-alt text-success me-2"></i>移动应用设计
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="关闭"></button>
+      </div>
+      <div class="modal-body">
+        <img src="pics/app.png" alt="移动应用设计" class="img-fluid rounded mb-4 shadow">
+        
+        <div class="mb-3">
+          <span class="badge bg-success me-2">UI/UX 设计</span>
+          <span class="badge bg-secondary">2023.09 - 2023.12</span>
+        </div>
+
+        <h6 class="fw-bold text-primary mb-3">
+          <i class="fas fa-info-circle me-2"></i>项目概述
+        </h6>
+        <p>完整的移动应用UI设计方案，包含用户界面设计、交互原型和用户体验优化。设计风格简约现代，符合当前移动端设计趋势。</p>
+        
+        <h6 class="fw-bold text-primary mb-3">
+          <i class="fas fa-palette me-2"></i>设计特点
+        </h6>
+        <ul class="list-unstyled">
+          <li><i class="fas fa-check-circle text-success me-2"></i>使用Figma进行原型设计和界面设计</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>遵循Material Design和iOS设计规范</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>完整的用户流程设计</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>多平台适配方案</li>
+        </ul>
+
+        <h6 class="fw-bold text-primary mb-3">
+          <i class="fas fa-tags me-2"></i>设计工具
+        </h6>
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <span class="badge bg-light text-dark">Figma</span>
+          <span class="badge bg-light text-dark">Sketch</span>
+          <span class="badge bg-light text-dark">Photoshop</span>
+          <span class="badge bg-light text-dark">Principle</span>
+        </div>
+        
+        <div class="d-flex gap-2">
+          <button class="btn btn-success">
+            <i class="fas fa-eye me-2"></i>查看原型
+          </button>
+          <button class="btn btn-outline-success">
+            <i class="fas fa-file-alt me-2"></i>设计文档
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 模态框3：数据可视化大屏 -->
+<div class="modal fade" id="projectModal3" tabindex="-1" aria-labelledby="projectModalLabel3" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="projectModalLabel3">
+          <i class="fas fa-chart-line text-secondary me-2"></i>数据可视化大屏
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="关闭"></button>
+      </div>
+      <div class="modal-body">
+        <img src="pics/data.png" alt="数据可视化大屏" class="img-fluid rounded mb-4 shadow">
+        
+        <div class="mb-3">
+          <span class="badge bg-secondary me-2">数据可视化</span>
+          <span class="badge bg-secondary">2024.03 - 2024.06</span>
+        </div>
+
+        <h6 class="fw-bold text-primary mb-3">
+          <i class="fas fa-info-circle me-2"></i>项目概述
+        </h6>
+        <p>企业级数据可视化大屏项目，实现了实时数据展示、多维度数据分析和交互式图表功能。适用于监控中心、会议室等大屏展示场景。</p>
+        
+        <h6 class="fw-bold text-primary mb-3">
+          <i class="fas fa-cogs me-2"></i>技术特点
+        </h6>
+        <ul class="list-unstyled">
+          <li><i class="fas fa-check-circle text-success me-2"></i>ECharts + Vue.js 构建交互式图表</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>WebSocket 实现实时数据更新</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>支持多种图表类型（柱状图、饼图、地图等）</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>响应式布局，适配不同屏幕尺寸</li>
+        </ul>
+
+        <h6 class="fw-bold text-primary mb-3">
+          <i class="fas fa-tags me-2"></i>技术栈
+        </h6>
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <span class="badge bg-light text-dark">Vue.js</span>
+          <span class="badge bg-light text-dark">ECharts</span>
+          <span class="badge bg-light text-dark">WebSocket</span>
+          <span class="badge bg-light text-dark">Axios</span>
+        </div>
+        
+        <div class="d-flex gap-2">
+          <button class="btn btn-secondary">
+            <i class="fas fa-play me-2"></i>在线演示
+          </button>
+          <button class="btn btn-outline-secondary">
+            <i class="fas fa-book me-2"></i>技术文档
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 模态框4：VLC QT高仿QQ播放器 -->
+<div class="modal fade" id="projectModal4" tabindex="-1" aria-labelledby="projectModalLabel4" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="projectModalLabel4">
+          <i class="fas fa-play-circle text-info me-2"></i>VLC QT高仿QQ播放器
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="关闭"></button>
+      </div>
+      <div class="modal-body">
+        <img src="pics/qt.png" alt="VLC QT高仿QQ播放器" class="img-fluid rounded mb-4 shadow">
+        
+        <div class="mb-3">
+          <span class="badge bg-info me-2">桌面应用</span>
+          <span class="badge bg-secondary">2025.06 - 2025.09</span>
+        </div>
+
+        <h6 class="fw-bold text-primary mb-3">
+          <i class="fas fa-info-circle me-2"></i>项目概述
+        </h6>
+        <p>基于VLC库和Qt框架开发的多媒体播放器，高度还原QQ影音的界面设计和交互体验。项目实现了视频播放、音频控制、播放列表管理等核心功能，支持主流视频格式。</p>
+        
+        <h6 class="fw-bold text-primary mb-3">
+          <i class="fas fa-lightbulb me-2"></i>核心功能
+        </h6>
+        <ul class="list-unstyled">
+          <li><i class="fas fa-check-circle text-success me-2"></i>基于VLC库实现多格式视频播放（MP4、AVI、MKV等）</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>Qt界面设计，高度仿QQ影音UI风格</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>播放列表管理、拖拽添加文件</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>音量调节、进度控制、快进/倒退</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>快捷键支持、全屏播放、截图功能</li>
+        </ul>
+
+        <h6 class="fw-bold text-primary mb-3">
+          <i class="fas fa-tags me-2"></i>技术栈
+        </h6>
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <span class="badge bg-light text-dark">C++</span>
+          <span class="badge bg-light text-dark">Qt 5/6</span>
+          <span class="badge bg-light text-dark">VLC LibVLC</span>
+          <span class="badge bg-light text-dark">QML</span>
+          <span class="badge bg-light text-dark">CMake</span>
+        </div>
+        
+        <div class="d-flex gap-2">
+          <button class="btn btn-info">
+            <i class="fas fa-play me-2"></i>功能演示
+          </button>
+          <button class="btn btn-outline-info">
+            <i class="fab fa-github me-2"></i>查看源码
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 模态框5：Qt+OpenCV视觉处理系统 -->
+<div class="modal fade" id="projectModal5" tabindex="-1" aria-labelledby="projectModalLabel5" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="projectModalLabel5">
+          <i class="fas fa-camera text-warning me-2"></i>Qt+OpenCV视觉处理系统
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="关闭"></button>
+      </div>
+      <div class="modal-body">
+        <img src="pics/OpenCV.png" alt="Qt+OpenCV视觉处理系统" class="img-fluid rounded mb-4 shadow">
+        
+        <div class="mb-3">
+          <span class="badge bg-warning text-dark me-2">计算机视觉</span>
+          <span class="badge bg-secondary">2025.09 - 2025.10</span>
+        </div>
+
+        <h6 class="fw-bold text-primary mb-3">
+          <i class="fas fa-info-circle me-2"></i>项目概述
+        </h6>
+        <p>结合Qt图形界面和OpenCV计算机视觉库开发的图像处理应用系统。项目实现了实时摄像头捕捉、多种图像滤镜、边缘检测、人脸识别等功能，提供友好的交互界面。</p>
+        
+        <h6 class="fw-bold text-primary mb-3">
+          <i class="fas fa-star me-2"></i>主要特性
+        </h6>
+        <ul class="list-unstyled">
+          <li><i class="fas fa-check-circle text-success me-2"></i>实时摄像头视频流捕捉与显示</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>图像滤镜（模糊、锐化、素描效果等）</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>边缘检测（Canny、Sobel算法）</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>人脸检测与特征识别（Haar级联分类器）</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>图像保存、灰度转换、二值化处理</li>
+          <li><i class="fas fa-check-circle text-success me-2"></i>Qt Designer界面设计，操作简洁直观</li>
+        </ul>
+
+        <h6 class="fw-bold text-primary mb-3">
+          <i class="fas fa-tags me-2"></i>技术栈
+        </h6>
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <span class="badge bg-light text-dark">C++</span>
+          <span class="badge bg-light text-dark">Qt 5/6</span>
+          <span class="badge bg-light text-dark">OpenCV 4.x</span>
+          <span class="badge bg-light text-dark">CMake</span>
+          <span class="badge bg-light text-dark">Qt Designer</span>
+        </div>
+        
+        <div class="d-flex gap-2">
+          <button class="btn btn-warning text-dark">
+            <i class="fas fa-video me-2"></i>功能演示
+          </button>
+          <button class="btn btn-outline-warning">
+            <i class="fas fa-code me-2"></i>技术文档
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 页脚 -->
+<footer>
+  <div class="container">
+    <p class="mb-2">&copy; 2025 浙江理工大学原田桦 | 设计与编码</p>
+    <p class="small text-muted mb-3">用心创造每一个数字体验</p>
+    <div class="social-links">
+      <a href="https://github.com/Fanecy" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="mailto:15934349473@163.com" title="邮箱">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="#" title="微信">
+        <i class="fab fa-weixin"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="lib/bootstrap-5.3.6-dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/aos-master/dist/aos.js"></script>
+<script>
+  // 初始化 AOS 动画
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 100
+  });
+
+  // 导航栏滚动效果
+  window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+      navbar.style.backgroundColor = 'rgba(31, 41, 55, 0.98)';
+      navbar.style.backdropFilter = 'blur(20px)';
+    } else {
+      navbar.style.backgroundColor = 'rgba(31, 41, 55, 0.95)';
+    }
+  });
+
+  // 平滑滚动到锚点
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+ // 表单提交处理
+  document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.querySelector('#contact form');
+    
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // 获取表单数据
+        const formData = {
+          name: this.querySelector('input[type="text"]').value.trim(),
+          email: this.querySelector('input[type="email"]').value.trim(),
+          subject: this.querySelector('select').value,
+          message: this.querySelector('textarea').value.trim(),
+          agree: this.querySelector('#agree').checked
+        };
+
+        // 表单验证
+        if (!validateForm(formData)) {
+          return;
+        }
+
+        // 显示加载状态
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>发送中...';
+        submitBtn.disabled = true;
+
+        // 模拟表单提交                                                                       （替换）！！！
+        submitForm(formData)
+          .then(response => {
+            // 显示成功提示
+            showAlert('success', '消息发送成功！我会尽快回复您。');
+            
+            // 重置表单
+            this.reset();
+            
+            // 可选：3秒后自动隐藏成功提示
+            setTimeout(() => {
+              hideAlert();
+            }, 5000);
+          })
+          .catch(error => {
+            // 显示错误提示
+            showAlert('danger', '发送失败，请稍后重试或直接联系我。');
+            console.error('表单提交错误:', error);
+          })
+          .finally(() => {
+            // 恢复按钮状态
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+          });
+      });
+    }
+
+    // 表单验证函数
+    function validateForm(data) {
+      // 清除之前的错误提示
+      clearErrors();
+
+      let isValid = true;
+
+      // 验证姓名
+      if (!data.name) {
+        showError('input[type="text"]', '请输入您的姓名');
+        isValid = false;
+      } else if (data.name.length < 2) {
+        showError('input[type="text"]', '姓名至少需要2个字符');
+        isValid = false;
+      }
+
+      // 验证邮箱
+      if (!data.email) {
+        showError('input[type="email"]', '请输入邮箱地址');
+        isValid = false;
+      } else if (!isValidEmail(data.email)) {
+        showError('input[type="email"]', '请输入有效的邮箱地址');
+        isValid = false;
+      }
+
+      // 验证主题选择
+      if (!data.subject || data.subject === '请选择咨询类型') {
+        showError('.form-select', '请选择咨询类型');
+        isValid = false;
+      }
+
+      // 验证留言内容
+      if (!data.message) {
+        showError('textarea', '请输入留言内容');
+        isValid = false;
+      } else if (data.message.length < 10) {
+        showError('textarea', '留言内容至少需要10个字符');
+        isValid = false;
+      }
+
+      // 验证隐私协议
+      if (!data.agree) {
+        showError('#agree', '请同意隐私政策');
+        isValid = false;
+      }
+
+      return isValid;
+    }
+
+    // 邮箱格式验证
+    function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+
+    // 显示错误提示
+    function showError(selector, message) {
+      const element = document.querySelector(selector);
+      const formGroup = element.closest('.mb-3') || element.closest('.form-check');
+      
+      if (formGroup) {
+        // 添加错误样式
+        element.classList.add('is-invalid');
+        
+        // 创建或更新错误提示
+        let errorElement = formGroup.querySelector('.invalid-feedback');
+        if (!errorElement) {
+          errorElement = document.createElement('div');
+          errorElement.className = 'invalid-feedback';
+          formGroup.appendChild(errorElement);
+        }
+        errorElement.textContent = message;
+        errorElement.style.display = 'block';
+      }
+    }
+
+    // 清除所有错误提示
+    function clearErrors() {
+      // 移除错误样式
+      document.querySelectorAll('.is-invalid').forEach(el => {
+        el.classList.remove('is-invalid');
+      });
+      
+      // 隐藏错误提示
+      document.querySelectorAll('.invalid-feedback').forEach(el => {
+        el.style.display = 'none';
+      });
+    }
+
+    // 显示提示消息（替代alert）
+    function showAlert(type, message) {
+      // 移除现有的提示
+      hideAlert();
+      
+      // 创建提示元素
+      const alertDiv = document.createElement('div');
+      alertDiv.className = `alert alert-${type} alert-dismissible fade show mt-3`;
+      alertDiv.innerHTML = `
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      `;
+      
+      // 插入到表单前面
+      contactForm.parentNode.insertBefore(alertDiv, contactForm);
+      
+      // 自动滚动到提示位置
+      alertDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // 隐藏提示消息
+    function hideAlert() {
+      const existingAlert = contactForm.parentNode.querySelector('.alert');
+      if (existingAlert) {
+        existingAlert.remove();
+      }
+    }
+
+    // 模拟表单提交函数                                                                          （替换）！！！
+    function submitForm(formData) {
+      return new Promise((resolve, reject) => {
+        // 模拟网络延迟
+        setTimeout(() => {
+          // 模拟90%的成功率
+          if (Math.random() > 0.1) {
+            resolve({
+              success: true,
+              message: '表单提交成功',
+              data: formData
+            });
+          } else {
+            reject({
+              success: false,
+              message: '服务器暂时无法处理请求'
+            });
+          }
+        }, 1500);
+      });
+    }
+
+    // 实时验证
+    const inputs = contactForm.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+      input.addEventListener('blur', function() {
+        const formData = {
+          name: contactForm.querySelector('input[type="text"]').value.trim(),
+          email: contactForm.querySelector('input[type="email"]').value.trim(),
+          subject: contactForm.querySelector('select').value,
+          message: contactForm.querySelector('textarea').value.trim(),
+          agree: contactForm.querySelector('#agree').checked
+        };
+        
+        // 只验证当前字段
+        validateField(this, formData);
+      });
+    });
+
+    function validateField(field, formData) {
+      let isValid = true;
+      let message = '';
+      
+      switch(field.type) {
+        case 'text':
+          if (!formData.name) {
+            isValid = false;
+            message = '请输入您的姓名';
+          } else if (formData.name.length < 2) {
+            isValid = false;
+            message = '姓名至少需要2个字符';
+          }
+          break;
+          
+        case 'email':
+          if (!formData.email) {
+            isValid = false;
+            message = '请输入邮箱地址';
+          } else if (!isValidEmail(formData.email)) {
+            isValid = false;
+            message = '请输入有效的邮箱地址';
+          }
+          break;
+          
+        case 'select-one':
+          if (!formData.subject || formData.subject === '请选择咨询类型') {
+            isValid = false;
+            message = '请选择咨询类型';
+          }
+          break;
+          
+        case 'textarea':
+          if (!formData.message) {
+            isValid = false;
+            message = '请输入留言内容';
+          } else if (formData.message.length < 10) {
+            isValid = false;
+            message = '留言内容至少需要10个字符';
+          }
+          break;
+          
+        case 'checkbox':
+          if (!formData.agree) {
+            isValid = false;
+            message = '请同意隐私政策';
+          }
+          break;
+      }
+      
+      // 更新验证状态
+      if (isValid) {
+        field.classList.remove('is-invalid');
+        field.classList.add('is-valid');
+      } else {
+        field.classList.remove('is-valid');
+        if (message) {
+          showError(field.selector || getSelector(field), message);
+        }
+      }
+    }
+
+    // 获取元素选择器
+    function getSelector(element) {
+      if (element.type === 'checkbox') return '#agree';
+      if (element.type === 'select-one') return '.form-select';
+      if (element.type === 'textarea') return 'textarea';
+      return `input[type="${element.type}"]`;
+    }
+  });
+</script>
+</body>
+</html>
