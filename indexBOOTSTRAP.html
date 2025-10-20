@@ -281,13 +281,32 @@ body {
   padding-left: 24px;
 }
 
-/* 轮播图箭头颜色 */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
+/* 轮播图整体样式 */
+.project-experience-carousel {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-radius: 0.75rem; 
+}
+
+/* 强制图片在固定比例容器内完美填充 */
+.project-experience-carousel .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+/* 轮播图箭头颜色和样式 */
+.project-experience-carousel .carousel-control-prev-icon,
+.project-experience-carousel .carousel-control-next-icon {
   background-color: #6366f1; 
   border-radius: 50%;
-  padding: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 1.25rem;
+  background-size: 50% 50%; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+.project-experience-carousel .carousel-control-prev:hover .carousel-control-prev-icon,
+.project-experience-carousel .carousel-control-next:hover .carousel-control-next-icon {
+  transform: scale(1.1);
 }
 
 /* ===== 作品展示 ===== */
@@ -1033,7 +1052,9 @@ footer .social-links a:hover {
               </div>
             </div>
             <div class="col-md-6">
+              <div class="ratio ratio-16x9">
               <img src="pics/web3.jpg" alt="炫彩产品官网" class="img-fluid rounded shadow-lg">
+              </div>
             </div>
           </div>
         </div>
@@ -1070,7 +1091,9 @@ footer .social-links a:hover {
               </div>
             </div>
             <div class="col-md-6">
+              <div class="ratio ratio-16x9">
               <img src="pics/app.png" alt="移动应用设计" class="img-fluid rounded shadow-lg">
+              </div>
             </div>
           </div>
         </div>
@@ -1107,7 +1130,9 @@ footer .social-links a:hover {
               </div>
             </div>
             <div class="col-md-6">
+              <div class="ratio ratio-16x9">
               <img src="pics/data.png" alt="数据可视化大屏" class="img-fluid rounded shadow-lg">
+            </div>
             </div>
           </div>
         </div>
@@ -1144,7 +1169,9 @@ footer .social-links a:hover {
       </div>
     </div>
     <div class="col-md-6">
+      <div class="ratio ratio-16x9">
       <img src="pics/qt.png" alt="VLC QT高仿QQ播放器" class="img-fluid rounded shadow-lg">
+    </div>
     </div>
   </div>
 </div>
@@ -1181,7 +1208,9 @@ footer .social-links a:hover {
       </div>
     </div>
     <div class="col-md-6">
+      <div class="ratio ratio-16x9">
       <img src="pics/OpenCV.png" alt="Qt+OpenCV视觉处理系统" class="img-fluid rounded shadow-lg">
+    </div>
     </div>
   </div>
 </div>
